@@ -1,1 +1,54 @@
-Sierpiński's Tirangle timer !
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierpiński's Triangle Generator</title>
+    <script>
+
+
+        // return 2d coordinates of point between p1 and p2 
+        function between_points( p1x,p1y, p2x,p2y)
+        {
+            let x = (p1x+p2x)/2;
+            let y =(p1y+p2y)/2;
+
+            return [x,y];
+        }
+
+
+
+        function gen_triangle(x1,y1,x2,y2,x3,y3)
+        {
+
+        }
+        void draw_sierp_triangle( p1,  p2,  p3)
+        {
+
+            let one = between_points(p1[0],p1[1],p2[0],p2[1]);
+            let two  = between_points(p1[0],p1[1],p3[0],p3[1]);
+            let three =between_points(p3[0],p3[1],p2[0],p2[1]);
+
+            a = document.getElementById("drawing_svg");
+
+            if (distance(p1[0],p1[1],p2[0],p2[1]) > 2.0)
+            {   
+                // draw left bottom triangle
+                draw_sierp_triangle(pbm,p1, one, two);
+                // draw right bottom triangle
+                draw_sierp_triangle(pbm, two,three, p3);
+                // draw top triangle
+                draw_sierp_triangle(pbm, one,p2, three);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <svg id="drawing_svg" width="device-width" height="device-height">
+        <polygon points="50,0 0,100 100,100"
+            style = "fill:black;">
+    </svg>
+</body>
+</html>
