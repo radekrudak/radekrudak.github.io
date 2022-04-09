@@ -8,10 +8,10 @@ function start() {
     body.innerHTML += `
     <svg id="drawing_svg" 
         width="`+screen_width+`" 
-        height="`+canvas_height+`" 
+        height="`+canvas_height+`"
+        style="border"
+        >
 
-        <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
-            
     </svg>
     `;
     console.log("Starting Drawing");
