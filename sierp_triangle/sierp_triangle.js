@@ -1,37 +1,31 @@
 start();
 function start() {
+    let screen_width = window.screen.availWidth*0.8;
+    let canvas_height = window.screen.availHeight*0.8;
+
     console.log("Generating svg tag");
     body = document.getElementById("main");
     body.innerHTML += `
     <svg id="drawing_svg" 
-        width="`+window.screen.availWidth+`" 
-        height="`+window.screen.availHeight+`" 
+        width="`+screen_width+`" 
+        height="`+canvas_height+`" 
 
         <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
             
     </svg>
     `;
     console.log("Starting Drawing");
+
     draw_sierp_triangle(
-        [window.screen.availWidth/2,0], 
-        [0,window.screen.availHeight], 
+        [screen_width/2, 0], 
+        [0, canvas_height], 
         
-        [window.screen.availWidth,window.screen.availHeight]
+        [screen_width, canvas_height]
         
         );
 
 }
-function start_drawing()
-{
-    console.log("Starting Drawing");
-    draw_sierp_triangle(
-        [window.screen.availWidth,0], 
-        [0,window.screen.availHeight], 
-        
-        [window.screen.availWidth,window.screen.availHeight]
-        
-        );
-}
+
 // return 2d coordinates of point between p1 and p2 
 function between_points(p1x, p1y, p2x, p2y) {
     let x = (p1x + p2x) / 2;
