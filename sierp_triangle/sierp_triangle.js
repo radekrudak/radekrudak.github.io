@@ -11,7 +11,9 @@ function start() {
         height="`+canvas_height+`"
         style="border"
         >
-
+        <polygon points="`+screen_width/2+`,0 0,`+canvas_height+` `+screen_width+`,`+canvas_height+`"
+        style = "fill:none; stroke:black;stroke-width:0.2%;" 
+        >
     </svg>
     `;
     console.log("Starting Drawing");
